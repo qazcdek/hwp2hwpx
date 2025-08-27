@@ -18,6 +18,14 @@ public class ForCompose {
     }
 
     private static String firstChar(ControlOverlappingLetter hwpOverlappingLetter) {
+        // 리스트가 null이거나 비어있는지 먼저 검사
+        if (hwpOverlappingLetter.getHeader() == null ||
+            hwpOverlappingLetter.getHeader().getOverlappingLetterList() == null ||
+            hwpOverlappingLetter.getHeader().getOverlappingLetterList().isEmpty()) {
+            return ""; // 리스트가 비어있으면 빈 문자열 반환
+        }
+
+        // 리스트에 요소가 있을 때만 get(0) 호출
         return hwpOverlappingLetter.getHeader().getOverlappingLetterList().get(0).toUTF16LEString();
     }
 
