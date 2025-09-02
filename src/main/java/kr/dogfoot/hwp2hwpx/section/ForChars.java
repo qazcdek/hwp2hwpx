@@ -202,7 +202,6 @@ public class ForChars extends Converter {
         if (hwpPara == null || hwpPara.getControlList() == null) return;
 
         if (extendControlIndex >= hwpPara.getControlList().size()) {
-            System.err.println("경고: extendControlIndex가 범위를 벗어났습니다. 해당 컨트롤을 건너뜁니다.");
             return;
         }
 
